@@ -1,6 +1,6 @@
 const {Router} = require('express');
 const router =  Router();
-const informationCtr = require('../../controllers/informationController');
+const informationCtr = require('../../controllers/informationPublicateController');
 
 /**Admin access */
 router.get('/pending',informationCtr.getPendingInformations);
