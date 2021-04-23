@@ -9,7 +9,7 @@ app.set('port',process.env.PORT || 3500);
 //Routes
 app.use(express.json());
 
-app.use('/api/auth',require('./routes/api/auth.routes'));
+app.use('/api/auth',require('./routes/api/authRoutes'));
 app.use('/api/informations',require('./routes/api/information.routes'));
 
 module.exports = app;
