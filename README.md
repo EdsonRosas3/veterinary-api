@@ -5,7 +5,7 @@
 En esta ruta veterinario podra iniciar sesion, si la sesion es correcta responde un objeto con los datos del veterinario
 ### https://veterinary-api.herokuapp.com/api/auth/signin
 
-##POST
+## POST
 En esta ruta el veterinario podra registrarse si todo va bien entonces devuelve un objeto veterinario con todos sus datos
 ### https://veterinary-api.herokuapp.com/api/auth/signup
 
