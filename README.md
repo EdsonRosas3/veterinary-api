@@ -14,7 +14,7 @@ Esta ruta devuelve una lista de todas la publicaciones que aun no an sido acetad
 ### https://veterinary-api.herokuapp.com/api/informations/pending
 
 ## PUT
-El superuser podra actulizar el estado de cada publicacion "status:false" a "status:true" para que la publicacion ya se pueda publicar 
+El superuser podra actulizar el estado de cada publicacion "state:false" a "state:true" para que la publicacion ya se pueda publicar 
 ### https://veterinary-api.herokuapp.com/api/informations/answer/:id
 
 ## POST
