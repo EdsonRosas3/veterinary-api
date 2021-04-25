@@ -30,5 +30,5 @@ Esta ruta es para que se pueda ver una publicacion en especifico mediante el id
 ### https://veterinary-api.herokuapp.com/api/informations/:id
 
 ## GET 
-Esta ruta respode con una lista de todas las publicaciones aceptadas o permitidas es decir "status:true"
+Esta ruta respode con una lista de todas las publicaciones aceptadas o permitidas es decir "state:true"
 ### https://veterinary-api.herokuapp.com/api/informations/
