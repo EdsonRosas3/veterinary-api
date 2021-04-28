@@ -1,8 +1,7 @@
 const Veterinary = require('../Models/Veterinary');
-const jwt = require('jsonwebtoken');
 
 const signUp = async (req,res)=>{
-    const {name,last_name,vet,email,phone,direction,description,password}=req.body;
+    const {name,last_name,vet,email,phone,direction,urlImg,password}=req.body;
     const veterinary = new Veterinary({
         name,
         last_name,
@@ -10,7 +9,7 @@ const signUp = async (req,res)=>{
         email,
         phone,
         direction,
-        description,
+        urlImg,
         password: await Veterinary.encryptPassword(password),
     });
    

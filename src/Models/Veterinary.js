@@ -13,8 +13,7 @@ const VeterinarySchema = new Schema({
     },
     phone:String,
     direction:String,
-    description:String,
-    ultImg:String,
+    urlImg:String,
     password:{
         type: String,
         required:true
