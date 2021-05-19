@@ -31,7 +31,7 @@ const createInformation = async ()=>{
         const  user= await User.findOne({name:"Tom"})
         const  user2= await User.findOne({name:"Jerry"})
         const values = await Promise.all([
-            new Information({title:"La sdfaf asdfsfesfe",category:"Cuidado alimenticio",description:"asdfsaf adsadsfasffafdsffasdf adsfasf df",urlFoto:"/asdfafasff",state:false,veterinary:user._id}).save(),
+            new Information({title:"La sdfaf asdfsfesfe",category:"Cuidado alimenticio",description:"asdfsaf adsadsfasffafdsffasdf adsfasf df",urlFoto:"/asdfafasff",state:true,veterinary:user._id}).save(),
             new Information({title:"La sdfaf fsfesfe",category:"Enfermedades",description:"asdfsaf dasfdsfadf adsfasdf adsfasf df",urlFoto:"/asdfafasff",state:false,veterinary:user._id}).save(),
             new Information({title:"una sdfaf asdfsfesfe",category:"Vacunas",description:"asdfsaf adsfasdf adsfasf df",urlFoto:"/asdfafasff",state:false,veterinary:user2._id}).save(),
         ])

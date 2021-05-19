@@ -80,7 +80,7 @@ const getSearchCategory = async(req,res)=>{
 }
 const getCuidadoAlimenticio = async(req,res)=>{
     try {
-        const cuidadoAlimenticio = await Information.find({category:"Cuidado alimenticio"});
+        const cuidadoAlimenticio = await Information.find({category:"Cuidado alimenticio",state:true});
         res.status(200).json(cuidadoAlimenticio);
     } catch (error) {
         res.status(400).json({message:error.message});
@@ -88,7 +88,7 @@ const getCuidadoAlimenticio = async(req,res)=>{
 }
 const getEfermedades = async(req,res)=>{
     try {
-        const enfermedades = await Information.find({category:"Enfermedades"});
+        const enfermedades = await Information.find({category:"Enfermedades",state:true});
         res.status(200).json(enfermedades);
     } catch (error) {
         res.status(400).json({message:error.message});
@@ -97,7 +97,7 @@ const getEfermedades = async(req,res)=>{
 
 const getVacunas = async(req,res)=>{
     try {
-        const vacunas = await Information.find({category:"Vacunas"});
+        const vacunas = await Information.find({category:"Vacunas",state:true});
         res.status(200).json(vacunas);
     } catch (error) {
         res.status(400).json({message:error.message});
