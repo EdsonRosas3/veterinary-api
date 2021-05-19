@@ -14,5 +14,9 @@ router.delete('/:id',informationCtr.deleteInfromationById);
 /**Public access, Vet access, Admin access*/
 router.get('/:id',informationCtr.getInformationById);
 router.get('/',informationCtr.getPermittedInformations);
+router.get('/category/nutritional/care',informationCtr.getCuidadoAlimenticio);
+router.get('/category/diseases',informationCtr.getEfermedades);
+router.get('/category/vaccines',informationCtr.getVacunas);
+
 
 module.exports = router;

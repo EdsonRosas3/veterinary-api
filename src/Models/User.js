@@ -2,7 +2,7 @@ const  bcrypt = require('bcryptjs');
 const mongoose = require('mongoose');
 const {Schema,model} = mongoose;
 
-const VeterinarySchema = new Schema({
+const UserSchema = new Schema({
     name:String,
     last_name:String,
     vet:String,
@@ -18,14 +18,18 @@ const VeterinarySchema = new Schema({
         type: String,
         required:true
     },
+    role:{
+        type:String,
+        default:"veterinary"
+    }
 });
 
-VeterinarySchema.statics.encryptPassword= async(password)=>{
+UserSchema.statics.encryptPassword= async(password)=>{
     const salt = await bcrypt.genSalt(10);
     return await bcrypt.hash(password,salt);
 }
-VeterinarySchema.statics.comparePassword= async(password,receivedPassword)=>{
+UserSchema.statics.comparePassword= async(password,receivedPassword)=>{
     return bcrypt.compare(password,receivedPassword);
 }
-//VeterinarySchema.plugin(require('mongoose-autopopulate'));
-module.exports = model('Veterinary',VeterinarySchema);
+//UserSchema.plugin(require('mongoose-autopopulate'));
+module.exports = model('User',UserSchema);

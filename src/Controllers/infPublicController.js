@@ -75,7 +75,32 @@ const getSearchCategory = async(req,res)=>{
         const informations = await Information.find(category);
         res.status(200).json(informations);
     } catch (error) {
-        res.status(400).json({message:error.message})
+        res.status(400).json({message:error.message});
+    }
+}
+const getCuidadoAlimenticio = async(req,res)=>{
+    try {
+        const cuidadoAlimenticio = await Information.find({category:"Cuidado alimenticio"});
+        res.status(200).json(cuidadoAlimenticio);
+    } catch (error) {
+        res.status(400).json({message:error.message});
+    }
+}
+const getEfermedades = async(req,res)=>{
+    try {
+        const enfermedades = await Information.find({category:"Enfermedades"});
+        res.status(200).json(enfermedades);
+    } catch (error) {
+        res.status(400).json({message:error.message});
+    }
+}
+
+const getVacunas = async(req,res)=>{
+    try {
+        const vacunas = await Information.find({category:"Vacunas"});
+        res.status(200).json(vacunas);
+    } catch (error) {
+        res.status(400).json({message:error.message});
     }
 }
 
@@ -87,5 +112,8 @@ module.exports = {
     deleteInfromationById,
     updateInformationById,
     updateInformationStateById,
-    getSearchCategory
+    getSearchCategory,
+    getCuidadoAlimenticio,
+    getEfermedades,
+    getVacunas
 }
