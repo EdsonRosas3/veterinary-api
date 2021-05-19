@@ -7,8 +7,8 @@ const InformationSchema = new Schema({
     description:String,
     urlFoto:String,
     state:{
-        type:Boolean,
-        default:false
+        type:String,
+        default:"Pendiente"
     },
     veterinary: { 
         type: mongoose.Schema.Types.ObjectId, 
