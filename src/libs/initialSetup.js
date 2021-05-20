@@ -31,9 +31,21 @@ const createInformation = async ()=>{
         const  user= await User.findOne({name:"Tom"})
         const  user2= await User.findOne({name:"Jerry"})
         const values = await Promise.all([
-            new Information({title:"La sdfaf asdfsfesfe",category:"Cuidado alimenticio",description:"asdfsaf adsadsfasffafdsffasdf adsfasf df",urlFoto:"/asdfafasff",state:"Aceptado",veterinary:user._id}).save(),
-            new Information({title:"La sdfaf fsfesfe",category:"Enfermedades",description:"asdfsaf dasfdsfadf adsfasdf adsfasf df",urlFoto:"/asdfafasff",veterinary:user._id}).save(),
-            new Information({title:"una sdfaf asdfsfesfe",category:"Vacunas",description:"asdfsaf adsfasdf adsfasf df",urlFoto:"/asdfafasff",veterinary:user2._id}).save(),
+            new Information({title:"La sdfaf asdfsfesfe",category:"Cuidado alimenticio",description:"asdfsaf adsadsfasffafdsffasdf sdfsdfsdfadsfasf df",urlFoto:"/asdfafasff",state:"Aceptado",veterinary:user._id}).save(),
+            new Information({title:"La sdfaf fsfesfe",category:"Enfermedades",description:"asdfsaf dasfdsfadf adsfasdf adsfasf sdfsdfsdfsdfsdfsdfsdfdsfsdfdsfsdfsd sdfsdfsdfdf",urlFoto:"/asdfafasff",veterinary:user._id}).save(),
+            new Information({title:"una sdfaf asdfsfesfe",category:"Vacunas",description:"asdfsaf adsfasdf adsfasf asdfdsfsdfsdfdssdfdsfdsfsdfsdfsdfdsffsdfdsfdf",urlFoto:"/asdfafasff",veterinary:user2._id}).save(),
+            new Information({title:"La sdfaf sddf",category:"Cuidado alimenticio",description:"asdfsaf sdfdsfsdfdsf adsadsfasffafdsffadsfsdf adsfasf df",urlFoto:"/asdfafasff",state:"Aceptado",veterinary:user._id}).save(),
+            new Information({title:"El sdfaf adfdsfd",category:"Vacunas",description:"sdsdfdsfa asdfsdf sdfdsfsdfdsf adsadsfasffafdsffadsfsdf adsfasf df",urlFoto:"/asdfafasff",state:"Aceptado",veterinary:user2._id}).save(),
+            new Information({title:"El pppp adfdsfd",category:"Enfermedades",description:"sdsdfdsfa asdfsdf sdfdsfsdfdsf adsadsfasffafdsffadsfsdf adsfasf df",urlFoto:"/asdfafasff",state:"Aceptado",veterinary:user2._id}).save(),
+            new Information({title:"Perr sdfaf adfdsfd",category:"Cuidado alimenticio",description:"sdsdfdsfa asdfsdf sdfdsfsdfdsf asdfdsfdsfadsadsfasffafdsffadsfsdf adsfasf df",urlFoto:"/asdfafasff",state:"Aceptado",veterinary:user2._id}).save(),
+            new Information({title:"Perr sasdddddd adfdsfd",category:"Vacunas",description:"dsdsdsdsdfdsfa asdfsdf sdfdsfsdfdsf asdfdsfdsfadsadsfasffafdsffadsfsdf adsfasf df",urlFoto:"/asdfafasff",state:"Aceptado",veterinary:user._id}).save(),
+            new Information({title:"Sasdddddd addddfdsfd",category:"Enfermedades",description:"dsdsdsdsdfdsfa dgdfsgfsd sdfdsfsdfdsf asdfdsfdsfadsadsfasffafdsffadsfsdf adsfasf df",urlFoto:"/asdfafasff",state:"Aceptado",veterinary:user._id}).save(),
+            new Information({title:"TTTTTttttsdffdgfdg addddfdsfd",category:"Vacunas",description:"dsdsdsdsdfdsfa dgdfsgfsd sdfdsfdfsdfsdfdsf asdfdsfdsfadsadsfasffafdsffadsfsdf adsfasf df",urlFoto:"/asdfafasff",state:"Aceptado",veterinary:user._id}).save(),
+            new Information({title:"llllllasdfdfsd addddfdsfd",category:"Cuidado alimenticio",description:"dsdsdsdsdfdsfa dgdfsgfsd sdfdsfdfsdfsdfdsf asdfdsfdsfadsadsfasffafdsffadsddsdsdsfsdf adsfasf df",urlFoto:"/asdfafasff",state:"Aceptado",veterinary:user2._id}).save(),
+            new Information({title:"pppppasdfdsfadsf addddfdsfd",category:"Vacunas",description:"dsdsdsdsdfdsfa dgdfsgfsd sdfdsfdfsdfsdfdsf asdfdsfdsfadsadsfasffafdsffadsddsdsdsfsdf adsfasf df",urlFoto:"/asdfafasff",state:"Aceptado",veterinary:user2._id}).save(),
+            new Information({title:"ooooooasdfadf addddfdsfd",category:"Enfermedades",description:"dsdsdsdsdfdsfa dgdfsgfsd sdfdsfdfsdfsdfdsf asdfdsfdsfadsadsfasffafdsffadsddsdsdsfsdf adsfasf df",urlFoto:"/asdfafasff",state:"Aceptado",veterinary:user._id}).save(),
+            new Information({title:"JJJdfsdgfsdg addddfdsfd",category:"Enfermedades",description:"dsdsdsdsdfdsfa dgdfsgfsd sdfdsfdfsdfsdfdsf asdfdsfdsfadsadsfasffafdsffadsddsdsdsfsdf adsfasf df",urlFoto:"/asdfafasff",state:"Aceptado",veterinary:user._id}).save(),
+            new Information({title:"PLADSds addddfdsfd",category:"Cuidado alimenticio",description:"dsdsdsdsdfdsfa dgdfsgfsd sdfdsfdfsdfsdfdsf asdfdsfdsfadsadsfasffafdsffadsddsdsdsfsdf adsfasf df",urlFoto:"/asdfafasff",state:"Aceptado",veterinary:user2._id}).save(),
         ])
     } catch (error) {
         console.log(error.message);
