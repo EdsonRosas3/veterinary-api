@@ -12,7 +12,7 @@ const createInformation = async(req,res)=>{
 }
 const getPermittedInformations = async(req,res)=>{
     try {
-        const informations = await Information.find({state:"Aceptado"});
+        const informations = await Information.find({state:"Aceptado"}).populate({ path: 'veterinary', model: 'User' }).exec();
         res.status(200).json(informations);
     } catch (error) {
         res.status(400).json({message:error.message})
@@ -20,7 +20,7 @@ const getPermittedInformations = async(req,res)=>{
 }
 const getPendingInformations = async(req,res)=>{
     try {
-        const informations = await Information.find({state:"Pendiente"});
+        const informations = await Information.find({state:"Pendiente"}).populate({ path: 'veterinary', model: 'User' }).exec();
         res.status(200).json(informations);
     } catch (error) {
         res.status(400).json({message:error.message})
@@ -29,7 +29,7 @@ const getPendingInformations = async(req,res)=>{
 const getInformationById = async(req,res)=>{
     try {
         const id = req.params.id;
-        const information =  await Information.findById(id);
+        const information =  await Information.findById(id).populate({ path: 'veterinary', model: 'User' }).exec();
         if(!information) return res.status(400).json({id:null,message:"no hay respuesta referente al ID"})
         res.status(200).json(information);
     } catch (error) {
@@ -72,7 +72,7 @@ const updateInformationStateById = async(req,res)=>{
 const getSearchCategory = async(req,res)=>{
     const {category}= req.body;
     try {
-        const informations = await Information.find(category);
+        const informations = await Information.find(category).populate({ path: 'veterinary', model: 'User' }).exec();
         res.status(200).json(informations);
     } catch (error) {
         res.status(400).json({message:error.message});
@@ -80,7 +80,7 @@ const getSearchCategory = async(req,res)=>{
 }
 const getCuidadoAlimenticio = async(req,res)=>{
     try {
-        const cuidadoAlimenticio = await Information.find({category:"Cuidado alimenticio",state:"Aceptado"});
+        const cuidadoAlimenticio = await Information.find({category:"Cuidado alimenticio",state:"Aceptado"}).populate({ path: 'veterinary', model: 'User' }).exec();
         res.status(200).json(cuidadoAlimenticio);
     } catch (error) {
         res.status(400).json({message:error.message});
@@ -88,7 +88,7 @@ const getCuidadoAlimenticio = async(req,res)=>{
 }
 const getEfermedades = async(req,res)=>{
     try {
-        const enfermedades = await Information.find({category:"Enfermedades",state:"Aceptado"});
+        const enfermedades = await Information.find({category:"Enfermedades",state:"Aceptado"}).populate({ path: 'veterinary', model: 'User' }).exec();
         res.status(200).json(enfermedades);
     } catch (error) {
         res.status(400).json({message:error.message});
@@ -97,7 +97,7 @@ const getEfermedades = async(req,res)=>{
 
 const getVacunas = async(req,res)=>{
     try {
-        const vacunas = await Information.find({category:"Vacunas",state:"Aceptado"});
+        const vacunas = await Information.find({category:"Vacunas",state:"Aceptado"}).populate({ path: 'veterinary', model: 'User' }).exec();
         res.status(200).json(vacunas);
     } catch (error) {
         res.status(400).json({message:error.message});

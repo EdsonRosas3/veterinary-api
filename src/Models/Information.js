@@ -15,5 +15,4 @@ const InformationSchema = new Schema({
         ref: 'Veterinary'
     },
 });
-
 module.exports = model('Information',InformationSchema);

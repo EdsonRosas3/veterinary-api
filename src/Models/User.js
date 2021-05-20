@@ -31,5 +31,4 @@ UserSchema.statics.encryptPassword= async(password)=>{
 UserSchema.statics.comparePassword= async(password,receivedPassword)=>{
     return bcrypt.compare(password,receivedPassword);
 }
-//UserSchema.plugin(require('mongoose-autopopulate'));
 module.exports = model('User',UserSchema);
