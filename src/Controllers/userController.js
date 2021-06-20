@@ -33,7 +33,27 @@ const signIn = async (req,res)=>{
         res.status(400).json({message:error.message})
     }
 }
-
+const updateUserById = async(req,res)=>{
+    try {
+        const id = req.params.id;
+        const veterinary2 = await User.findByIdAndUpdate(id,req.body);
+        const veterinary =  await User.findById(id);
+        if(!veterinary2) return res.status(400).json({id:null,message:"no hay respuesta referente al ID"})
+        res.status(200).json(veterinary);
+    } catch (error) {
+        res.status(400).json({delete:false,message:error.message})
+    }
+}
+const getUserById = async(req,res)=>{
+    try {
+        const id = req.params.id;
+        const veterinary =  await User.findById(id);
+        if(!veterinary) return res.status(400).json({id:null,message:"no hay respuesta referente al ID"})
+        res.status(200).json(veterinary);
+    } catch (error) {
+        res.status(400).json({message:error.message})
+    }
+}
 const getVeterinaries = async(req, res)=>{
     try {
         const users =  await User.find({role:"veterinary"});
@@ -42,8 +62,12 @@ const getVeterinaries = async(req, res)=>{
         res.status(400).json({message:error.message})
     }
 }
+
+
 module.exports = {
     signIn,
     signUp,
-    getVeterinaries
+    getVeterinaries,
+    getUserById,
+    updateUserById
 }

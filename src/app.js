@@ -3,9 +3,9 @@ const express = require('express');
 const autRoute = require('./Routes/Api/authRoutes');
 const infRoute = require('./Routes/Api/informationRoutes');
 const userRouter = require('./Routes/Api/userRoutes');
-const pdfView = require('./Routes/web/view');
-const exphbs = require('express-handlebars');
+const pdfView = require('./Routes/web/GenerateReport');
 const app =  express();
+const path = require('path')
 
 app.use((req, res, next) => {
     res.header('Access-Control-Allow-Origin', '*');
@@ -15,13 +15,11 @@ app.use((req, res, next) => {
     next();
 });
 //Configuration app
-app.engine('handlebars', exphbs());
-app.set('view engine', 'handlebars');
 app.set('port',process.env.PORT || 3500);
 app.use(express.json());
 
 //Routes
-app.use('/pdf',pdfView);
+app.use('/pdf/report',pdfView);
 app.use('/api/auth',autRoute);
 app.use('/api/informations',infRoute);
 app.use('/api/user',userRouter);

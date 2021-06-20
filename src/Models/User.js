@@ -21,7 +21,13 @@ const UserSchema = new Schema({
     role:{
         type:String,
         default:"veterinary"
-    }
+    },
+    /* publications:[{ 
+        type: mongoose.Schema.Types.ObjectId, 
+        ref: 'Veterinary'
+    }] */
+},{
+    timestamps: true 
 });
 
 UserSchema.statics.encryptPassword= async(password)=>{

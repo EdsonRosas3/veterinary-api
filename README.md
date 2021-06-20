@@ -12,8 +12,16 @@ En esta ruta el veterinario podra registrarse si todo va bien entonces devuelve 
 ## GET veterinarios
 ### https://veterinary-api.herokuapp.com/api/user/veterinarians
 
+## GET veterinario
+Solo obtener un veterinario es importamte pasar el  ID para obtener solo el veterinario que se quiere.
+### https://veterinary-api.herokuapp.com/api/user/veterinary/:id
+
+## PUT veterinario
+Actualizar datos del veterinario es importante pasar el ID para poder actualizar los datos del veterinario.
+### https://veterinary-api.herokuapp.com/api/user/veterinary/:id
+
 ## GET publicaciones pendientes
-Esta ruta devuelve una lista de todas la publicaciones que aun no an sido acetadas por el superuser
+Esta ruta devuelve una lista de todas la publicaciones que aun no an sido acetadas por el superuser.
 ### https://veterinary-api.herokuapp.com/api/informations/pending
 
 ## PUT aseptar o rechazar publicación
@@ -35,6 +43,20 @@ Esta ruta es para que se pueda ver una publicacion en especifico mediante el id
 ## GET publicaciones aceptadas
 Esta ruta respode con una lista de todas las publicaciones aceptadas o permitidas es decir "state:true"
 ### https://veterinary-api.herokuapp.com/api/informations/
+
+# REPORTE
+primero debemos generar el reporte y luego podremos descargarlo o verlos en el navegador 
+## GET generar reporte
+Genera el reporte con los datos actuales de la base de datos
+### https://veterinary-api.herokuapp.com/pdf/report/generate
+
+## GET descargar reporte
+Desgarga automatica
+### https://veterinary-api.herokuapp.com/pdf/report/dowload
+
+## GET descargar reporte
+Ver el pdf en el navegador
+### https://veterinary-api.herokuapp.com/pdf/report/view
 
 ## Categoria de publicaciones
 ## GET cuidado alimenticios

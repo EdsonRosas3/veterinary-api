@@ -14,5 +14,7 @@ const InformationSchema = new Schema({
         type: mongoose.Schema.Types.ObjectId, 
         ref: 'Veterinary'
     },
+},{
+    timestamps: true 
 });
 module.exports = model('Information',InformationSchema);
