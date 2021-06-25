@@ -59,7 +59,7 @@ Genera el reporte con los datos actuales de la base de datos
 Desgarga automatica
 ### https://veterinary-api.herokuapp.com/pdf/report/dowload
 
-## GET descargar reporte
+## GET previsualizar el reporte 
 Ver el pdf en el navegador
 ### https://veterinary-api.herokuapp.com/pdf/report/view
 
