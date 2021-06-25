@@ -24,7 +24,7 @@ const UserSchema = new Schema({
     },
     /* publications:[{ 
         type: mongoose.Schema.Types.ObjectId, 
-        ref: 'Veterinary'
+        ref: 'Information'
     }] */
 },{
     timestamps: true 

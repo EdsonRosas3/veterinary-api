@@ -10,6 +10,7 @@ router.put('/answer/:id',informationCtr.updateInformationStateById);
 router.post('/',informationCtr.createInformation);
 router.put('/:id',informationCtr.updateInformationById);
 router.delete('/:id',informationCtr.deleteInfromationById);
+router.get('/vet/:id',informationCtr.getInformationByIdUser);
 
 /**Public access, Vet access, Admin access*/
 router.get('/:id',informationCtr.getInformationById);

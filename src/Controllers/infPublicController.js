@@ -36,6 +36,16 @@ const getInformationById = async(req,res)=>{
         res.status(400).json({message:error.message})
     }
 }
+const getInformationByIdUser = async(req,res)=>{
+    try {
+        const id = req.params.id;
+        const informations =  await Information.find({veterinary:id});
+        if(!informations) return res.status(400).json({id:null,message:"no hay respuesta referente al ID"})
+        res.status(200).json(informations);
+    } catch (error) {
+        res.status(400).json({message:error.message})
+    }
+}
 
 const deleteInfromationById = async(req,res)=>{
     try {
@@ -109,6 +119,7 @@ module.exports = {
     getPermittedInformations,
     getPendingInformations,
     getInformationById,
+    getInformationByIdUser,
     deleteInfromationById,
     updateInformationById,
     updateInformationStateById,

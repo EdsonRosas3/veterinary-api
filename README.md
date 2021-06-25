@@ -20,6 +20,11 @@ Solo obtener un veterinario es importamte pasar el  ID para obtener solo el vete
 Actualizar datos del veterinario es importante pasar el ID para poder actualizar los datos del veterinario.
 ### https://veterinary-api.herokuapp.com/api/user/veterinary/:id
 
+## GET publicaciones que pertenecen a un veterinario
+Esta ruta devuelve todas las publicaciones que pertencen a un Veterinario(User). Se debe pasar el ID del veterinario
+
+### https://veterinary-api.herokuapp.com/api/informations/vet/:id
+
 ## GET publicaciones pendientes
 Esta ruta devuelve una lista de todas la publicaciones que aun no an sido acetadas por el superuser.
 ### https://veterinary-api.herokuapp.com/api/informations/pending

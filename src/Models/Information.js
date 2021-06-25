@@ -12,7 +12,7 @@ const InformationSchema = new Schema({
     },
     veterinary: { 
         type: mongoose.Schema.Types.ObjectId, 
-        ref: 'Veterinary'
+        ref: 'User'
     },
 },{
     timestamps: true 
