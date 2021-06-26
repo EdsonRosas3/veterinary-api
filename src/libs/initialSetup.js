@@ -13,11 +13,11 @@ const createUser = async ()=>{
         if(count>0) return;
         const tompass = await passportEncrypt("tom")
         const jerrypass= await passportEncrypt("jerry")
-        const adminpass = await passportEncrypt("admin")
+        const adminpass = await passportEncrypt("123456789")
         const values = await Promise.all([
             new User({name:"Tom",last_name:"Vaga Gozo",vet:"SALUD CANINA",email:"tom@gmail.com",phone:"72568012",direction:"Av Urtado y colon",urlImg:"/adsfsfsdf",password:tompass}).save(),
             new User({name:"Jerry",last_name:"Illanes Conde",vet:"PERRITO AMIGO",email:"jerry@gmail.com",phone:"62305458",direction:"Sacaba huayllani",urlImg:"/asdfsfsdf",password:jerrypass}).save(),
-            new User({name:"admin",last_name:"Lozada Motes",email:"admin@gmail.com",phone:"74526312",direction:"molinos de someti",urlImg:"/adfsfsdf",password:adminpass,role:"admin"}).save(),
+            new User({name:"admin",last_name:"Lozada Motes",email:"admin@gmail.com",phone:"74526312",direction:"molinos de someti",urlImg:"/adfsfsdf",password:adminpass}).save(),
         ])
     } catch (error) {
         console.log(error.message);

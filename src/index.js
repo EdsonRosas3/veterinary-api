@@ -3,7 +3,7 @@ const {createInformation,createUser} = require("./libs/initialSetup");
 
 require('./db');
 createUser();
-createInformation();
+//createInformation();
 
 app.listen(app.get('port'),()=>{
     console.log('Server in port ',`http://localhost:${app.get('port')}/api/`);

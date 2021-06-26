@@ -34,6 +34,15 @@ const signIn = async (req,res)=>{
     }
 }
 const updateUserById = async(req,res)=>{
+
+    const user = await User.findById(req.params.id);
+    const {password}= req.body;
+    if(password){
+        const mewPassword= await User.encryptPassword(password);
+        req.body.password = mewPassword;
+    }else{
+        req.body.password= user.password;
+    }
     try {
         const id = req.params.id;
         const veterinary2 = await User.findByIdAndUpdate(id,req.body);
