@@ -721,7 +721,7 @@ const informationsP = [
     __v: 0
   }
 ]
-router.get('/generate', async(req,res)=>{
+router.get('/generatev0', async(req,res)=>{
   const users = await User.find();
   const informations = await Information.find().populate({ path: 'veterinary', model: 'User' }).exec();
   const TOTAL_VETERIANRIOS=users.length;
@@ -773,8 +773,65 @@ router.get('/generate', async(req,res)=>{
             }
         });
     }
+ });
 });
+
+router.get('/generate', async(req,res)=>{
+  const users = await User.find();
+  const informations = await Information.find().populate({ path: 'veterinary', model: 'User' }).exec();
+  const TOTAL_VETERIANRIOS=users.length;
+  const TOTAL_PUBLICACIONES = informations.length;
+  const info_aceptados = [];
+  const info_rechazados = [];
+  const info_pendientes = [];
+  informations.forEach(info => {
+    if(info.state=="Aceptado"){
+      info_aceptados.push(info);
+    }
+    if(info.state=="Rechazado"){
+      info_rechazados.push(info);
+    }
+    if(info.state=="Pendiente"){
+      info_pendientes.push(info);
+    }
+  });
+  const total_aceptados = info_aceptados.length;
+  const total_rechazados = info_rechazados.length;
+  const total_pendientes = info_pendientes.length;
+  const datas={
+    users,
+    informations,
+    TOTAL_VETERIANRIOS,TOTAL_PUBLICACIONES,
+    info_aceptados,info_rechazados,info_pendientes,
+    total_aceptados,total_rechazados,total_pendientes
+  }
+
+  ejs.renderFile(path.join(__dirname, './views/', "v2report-template.ejs"), {datas: datas}, (err, data) => {
+    if (err) {
+          res.send(err);
+    } else {
+        let options = {
+            "height": "11.25in",
+            "width": "8.5in",
+            "header": {
+                "height": "20mm"
+            },
+            "footer": {
+                "height": "20mm",
+            },
+        };
+        pdf.create(data, options).toFile(path.join(__dirname,'report.pdf'), function (err, data) {
+            if (err) {
+                res.json({message:"Error"});
+            } else {
+                res.json({message:"File report created successfully"});
+            }
+        });
+    }
+ });
 });
+
+
 
 router.get('/view',(req,res)=>{
   var filePath = path.join(__dirname,"report.pdf");

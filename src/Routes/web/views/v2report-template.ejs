@@ -1,0 +1,333 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <style>
+            body{
+                font-size: 12px;
+                font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, "Noto Sans", sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol", "Noto Color Emoji";
+            }
+            footer, header, main{
+              display: block;
+            }
+            h1, h2, h3, h4, h5, h6 {
+              margin-top: 0px;
+              margin-bottom: 0.5rem;
+            }
+            p {
+              margin-top: 0;
+              margin-bottom: 1rem;
+            }
+            table {
+              border-collapse: collapse;
+            }
+            th {
+              text-align: inherit;
+            }
+            .container {
+              width: 100%;
+              padding-right: 15px;
+              padding-left: 15px;
+              margin-right: auto;
+              margin-left: auto;
+            }
+            .table {
+              width: 100%;
+              margin-bottom: 1rem;
+              color: #212529;
+            }
+            .table th,
+            .table td {
+              padding: 0.75rem;
+              vertical-align: top;
+              border-top: 1px solid #dee2e6;
+            }
+            .table thead th {
+              vertical-align: bottom;
+              border-bottom: 2px solid #dee2e6;
+            }
+            .table tbody + tbody {
+              border-top: 2px solid #dee2e6;
+            }
+            .table-sm th,
+            .table-sm td {
+              padding: 0.3rem;
+            }
+            .table-bordered {
+              border: 1px solid #dee2e6;
+            }
+            .table-bordered th,
+            .table-bordered td {
+              border: 1px solid #dee2e6;
+            }
+            .table-bordered thead th,
+            .table-bordered thead td {
+              border-bottom-width: 2px;
+            }
+            .text-center {
+              text-align: center !important;
+            }
+            .table .thead-light th {
+              color: #495057;
+              background-color: #e9ecef;
+              border-color: #dee2e6;
+            }
+            .table-active,
+            .table-active > th,
+            .table-active > td {
+              background-color: rgba(0, 0, 0, 0.075);
+            }
+                 .contenido{
+                     width: 100%;
+                     display: flex;
+                 }
+                 .title{
+                     text-align: center;
+                     font-size: x-large;
+                 }
+                 .principal{
+                     margin-top: 20px;
+                 }
+                 .razon-social{
+                    display: flex;
+                    padding-bottom: 0px;
+                    margin-bottom: 0px;
+                 }
+                 .fecha-derecha{
+                    text-align: right !important;
+                    padding-bottom: 0px;
+                    margin-bottom: 0px;
+                 }
+                .bajar{
+                    padding-top: 15px;
+                    padding-bottom: 0px;
+                    margin-bottom: 0px;
+                    text-align: justify;
+                }
+                td{
+                    height: 20px;
+                }
+                .celdaPers {
+                    height: 50px;
+                }
+                .text-right {
+                    text-align: right !important;
+                }
+                .total{
+                    color: blue;
+                    margin-left: 25px;
+                }
+                .pocicion{
+                    position: relative;
+                    top: -30px;
+                }
+                .card {
+                    position: relative;
+                    display: -ms-flexbox;
+                    display: flex;
+                    -ms-flex-direction: column;
+                    flex-direction: column;
+                    min-width: 0;
+                    word-wrap: break-word;
+                    background-color: #fff;
+                    background-clip: border-box;
+                    border: 1px solid rgba(0, 0, 0, 0.125);
+                    border-radius: 0.25rem;
+                  }
+                  .card-img,
+                  .card-img-top,
+                  .card-img-bottom {
+                    -ms-flex-negative: 0;
+                    flex-shrink: 0;
+                    width: 100%;
+                  }
+                  
+                  .card-img,
+                  .card-img-top {
+                    border-top-left-radius: calc(0.25rem - 1px);
+                    border-top-right-radius: calc(0.25rem - 1px);
+                  }
+                  .card-body {
+                    -ms-flex: 1 1 auto;
+                    flex: 1 1 auto;
+                    min-height: 1px;
+                    padding: 1.25rem;
+                  }
+                  
+                  .card-title {
+                    margin-bottom: 0.75rem;
+                  }
+                  .card-text:last-child {
+                    margin-bottom: 0;
+                  }
+                  .card-subtitle {
+                    margin-top: -0.375rem;
+                    margin-bottom: 0;
+                  }
+                  .text-muted {
+                    color: #6c757d !important;
+                  }
+                  .mb-2,
+                    .my-2 {
+                    margin-bottom: 0.5rem !important;
+                    }
+        </style>
+    </head>
+    <body>
+
+        <h5 class="title">REPORTE</h5>
+        <div class="">
+            <h2  class="text-center">Veterinarios registrados</h2>
+            <p class="total">Total: <span><%= datas.TOTAL_VETERIANRIOS %></span> </p>
+            <table class="table table-sm table-bordered text-center">
+                <thead class="thead-light">
+                    <tr>
+                        <th width="">Nombre(s)</th>
+                        <th width="">Apellidos(s)</th>
+                        <th width="">Fecha de registro</th>
+                        <th width="">Ultima actualizacion</th>
+                    </tr>
+                </thead>
+               <tbody>
+                <%if(datas.users.length>0){%>
+                    <% datas.users.forEach(user =>{%>
+                        <tr>
+                            <td><%= user.name %></td>
+                            <td><%= user.last_name %></td>
+                            <td><%= user.createdAt %></td>
+                            <td><%= user.updatedAt %></td>
+                        </tr>
+                    <%});%>
+                <%}%>
+                </tbody>
+            </table>
+        </div>
+        <div class="">
+            <h2  class="text-center">Publicaiones registradas</h2>
+            <p class="total">Total: <span><%= datas.TOTAL_PUBLICACIONES %></span> </p>
+            <table class="table table-sm table-bordered text-center">
+                <thead class="thead-light">
+                    <tr>
+                        <th width="">Titulo</th>
+                        <th width="">Categoria(s)</th>
+                        <th width="">Estado</th>
+                        <th width="">Fecha creación</th>
+                        <th width="">Creado Por</th>
+                    </tr>
+                </thead>
+               <tbody>
+                <%if(datas.informations.length>0){%>
+                    <% datas.informations.forEach(info =>{%>
+                        <tr>
+                            <td><%= info.title %></td>
+                            <td><%= info.category %></td>
+                            <td><%= info.state %></td>
+                            <td><%= info.createdAt %></td>
+                            <td><%= info.veterinary.name %> <%= info.veterinary.last_name %></td>
+                        </tr>
+                    <%});%>
+                <%}%>
+                </tbody>
+            </table>
+        </div>
+        <div class="">
+            <h2  class="text-center">Publicaiones Aceptadas</h2>
+            <p class="total">Total: <span><%= datas.total_aceptados %></span> </p>
+            <table class="table table-sm table-bordered text-center">
+                <thead class="thead-light">
+                    <tr>
+                        <th width="">Titulo</th>
+                        <th width="">Categoria(s)</th>
+                        <th width="">Estado</th>
+                        <th width="">Fecha Aceptado</th>
+                        <th width="">Creado Por</th>
+                    </tr>
+                </thead>
+               <tbody>
+                <%if(datas.info_aceptados.length>0){%>
+                    <% datas.info_aceptados.forEach(info =>{%>
+                        <tr>
+                            <td><%= info.title %></td>
+                            <td><%= info.category %></td>
+                            <td><%= info.state %></td>
+                            <td><%= info.updatedAt %></td>
+                            <td><%= info.veterinary.name %> <%= info.veterinary.last_name %></td>
+                        </tr>
+                    <%});%>
+                <%}%>
+                </tbody>
+            </table>
+        </div>
+        <div class="">
+            <h2  class="text-center">Publicaiones Rechazadas</h2>
+            <p class="total">Total: <span><%= datas.total_rechazados %></span> </p>
+            <table class="table table-sm table-bordered text-center">
+                <thead class="thead-light">
+                    <tr>
+                        <th width="">Titulo</th>
+                        <th width="">Categoria(s)</th>
+                        <th width="">Estado</th>
+                        <th width="">Fecha Rechazado</th>
+                        <th width="">Creado Por</th>
+                    </tr>
+                </thead>
+               <tbody>
+                <%if(datas.info_rechazados.length>0){%>
+                    <% datas.info_rechazados.forEach(info =>{%>
+                        <tr>
+                            <td><%= info.title %></td>
+                            <td><%= info.category %></td>
+                            <td><%= info.state %></td>
+                            <td><%= info.updatedAt %></td>
+                            <td><%= info.veterinary.name %> <%= info.veterinary.last_name %></td>
+                        </tr>
+                    <%});%>
+                <%}%>
+                </tbody>
+            </table>
+        </div>
+        <div class="">
+            <h2  class="text-center">Publicaiones Pendientes</h2>
+            <p class="total">Total: <span><%= datas.total_pendientes %></span> </p>
+            <table class="table table-sm table-bordered text-center">
+                <thead class="thead-light">
+                    <tr>
+                        <th width="">Titulo</th>
+                        <th width="">Categoria(s)</th>
+                        <th width="">Estado</th>
+                        <th width="">Solicitado Por</th>
+                    </tr>
+                </thead>
+               <tbody>
+                <%if(datas.info_pendientes.length>0){%>
+                    <% datas.info_pendientes.forEach(info =>{%>
+                        <tr>
+                            <td><%= info.title %></td>
+                            <td><%= info.category %></td>
+                            <td><%= info.state %></td>
+                            <td><%= info.veterinary.name %> <%= info.veterinary.last_name %></td>
+                        </tr>
+                    <%});%>
+                <%}%>
+                </tbody>
+            </table>
+            <h2  class="text-center">Publicaciones</h2>
+            <%if(datas.informations.length>0){%>
+                <% datas.informations.forEach(info =>{%>
+                    <div>
+                        <div class="card" style="width: 40rem;">
+                            <p style="text-align: center;"><img src="<%= info.urlFoto %>" style="width: 15rem;" class="card-img-top" alt=""></p>
+                            <div class="card-body">
+                              <h4 class="card-title"><%= info.title %> </h4>
+                              <h5 class="card-subtitle mb-2 text-muted">Categoria: <%= info.category %></h5>
+                              <h5 class="card-subtitle mb-2 text-muted">Fecha registrada: <%= info.createdAt %></h5>
+                              <p class="card-text"><%= info.description %> </p>
+                              <p class="card-text">Veterinario: <%= info.veterinary.name %> <%= info.veterinary.last_name %> <span class="card-subtitle mb-2 text-muted"><%= info.state %></p>
+                            </div>
+                        </div>
+                        <br>
+                    </div>
+                <%});%>
+            <%}%>
+        </div>
+    </body>
+</html>
